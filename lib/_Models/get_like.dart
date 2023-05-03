@@ -1,0 +1,24 @@
+class GetLike {
+  GetLike({
+    required this.success,
+    required this.message,
+    required this.data,
+  });
+  late final bool success;
+  late final String message;
+  late final int data;
+
+  GetLike.fromJson(Map<String, dynamic> json) {
+    success = json['success'];
+    message = json['message'];
+    data = json['data'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final _data = <String, dynamic>{};
+    _data['success'] = success;
+    _data['message'] = message;
+    _data['data'] = data;
+    return _data;
+  }
+}
